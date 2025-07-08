@@ -384,3 +384,41 @@ section h2 {
   box-shadow: 0 8px 20px var(--shadow);
   border: 2px solid var(--primary);
 }
+/* ESTILOS PARA GRUPO DE BOTONES Y CANJE */
+.button-group {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.btn-redeem {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-redeem:hover {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+/* Ajuste para que los botones se vean bien en pantallas más grandes */
+@media (min-width: 600px) {
+  .button-group {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Estilo para el estado de pagado con puntos */
+.order-card .status-pagado-con-puntos { 
+  color: #007bff; /* Un azul para diferenciarlo */
+  font-weight: bold; 
+  text-transform: capitalize; 
+}
