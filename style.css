@@ -367,3 +367,20 @@ section h2 {
 .order-card .status-pagado { color: #28a745; font-weight: bold; text-transform: capitalize; }
 .order-card .status-pendiente { color: #ffc107; font-weight: bold; text-transform: capitalize; }
 .order-card .status-cancelado { color: #dc3545; font-weight: bold; text-transform: capitalize; }
+/* ESTILOS PARA LA SECCIÓN DE UBICACIÓN */
+.location-section {
+  background-color: var(--surface);
+  text-align: center;
+}
+
+.location-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px var(--shadow);
+  border: 2px solid var(--primary);
+}
