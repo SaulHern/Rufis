@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rufis - Alitas y Más</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script type="module" src="script.js"></script>
 </head>
 <body>
@@ -17,81 +16,131 @@
         <a href="#menu">Menú</a>
         <a href="#lealtad">Rufi Puntos</a>
         <a href="#contacto">Contacto</a>
-        <a href="login.html" class="btn-secondary">Iniciar Sesión</a>
+        <a href="login.html" class="btn-secondary">Mi Cuenta</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h2>¡Las mejores alitas, boneless y papas están en Rufis!</h2>
-      <p>Deliciosas combinaciones, rufi puntos por cada compra, y servicio rápido y sabroso.</p>
-      <a href="#menu" class="btn-primary">Ver Menú</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>LAS MEJORES ALITAS, BONELESS Y PAPAS.</h2>
+        <p>Hechas al momento con ingredientes de la mejor calidad. Pide ahora y acumula Rufi Puntos.</p>
+        <a href="#menu" class="btn-primary">VER MENÚ</a>
+      </div>
+    </section>
 
-  <section id="menu" class="menu-section">
-    <div class="container">
-      <h2>Menú</h2>
-      <div class="card-grid">
-        <div class="card">
-          <img src="images/alitas.jpg" alt="Alitas">
-          <div class="card-body">
-            <h3>Alitas</h3>
-            <p>Jugosas, picantes y crujientes.</p>
-            <span>$100</span>
-            <button onclick="agregarAlCarrito('Alitas', 100)">Agregar</button>
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2>Nuestro Menú</h2>
+        <div class="card-grid">
+          <div class="card">
+            <img src="images/alitas.jpg" alt="Alitas">
+            <div class="card-body">
+              <h3>Alitas</h3>
+              <p>10 jugosas alitas bañadas en tu salsa favorita (BBQ, Buffalo o Mango Habanero).</p>
+              <span class="price">$100</span>
+              <button class="btn-add-cart" onclick="agregarAlCarrito('Alitas', 100)">Agregar</button>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="images/boneless.jpg" alt="Boneless">
-          <div class="card-body">
-            <h3>Boneless</h3>
-            <p>Sin hueso, todo sabor.</p>
-            <span>$90</span>
-            <button onclick="agregarAlCarrito('Boneless', 90)">Agregar</button>
+          <div class="card">
+            <img src="images/boneless.jpg" alt="Boneless">
+            <div class="card-body">
+              <h3>Boneless</h3>
+              <p>200g de trozos de pechuga de pollo empanizados y bañados en salsa.</p>
+              <span class="price">$90</span>
+              <button class="btn-add-cart" onclick="agregarAlCarrito('Boneless', 90)">Agregar</button>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="images/papas_queso.jpg" alt="Papas con Queso">
-          <div class="card-body">
-            <h3>Papas con Queso</h3>
-            <p>Con queso derretido encima.</p>
-            <span>$50</span>
-            <button onclick="agregarAlCarrito('Papas con Queso', 50)">Agregar</button>
+          <div class="card">
+            <img src="images/papas_queso.jpg" alt="Papas con Queso">
+            <div class="card-body">
+              <h3>Papas con Queso</h3>
+              <p>Papas a la francesa con un delicioso y cremoso queso cheddar fundido.</p>
+              <span class="price">$50</span>
+              <button class="btn-add-cart" onclick="agregarAlCarrito('Papas con Queso', 50)">Agregar</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="lealtad" class="loyalty-section">
-    <div class="container">
-      <h2>🎁 Rufi Puntos</h2>
-      <p>Gana puntos por cada $100 de consumo y cámbialos por productos gratis. ¡Solo necesitas registrarte!</p>
-    </div>
-  </section>
+    <section id="especialidades" class="menu-section">
+        <div class="container">
+            <h2>Nuestras Especialidades</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="images/papas_francesas.jpg" alt="Papas Francesas">
+                    <div class="card-body">
+                        <h3>Papas Francesas</h3>
+                        <p>Las clásicas papas a la francesa, doradas y crujientes. El acompañante perfecto.</p>
+                        <span class="price">$100</span>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito('Papas Francesas', 100)">Agregar</button>
+                    </div>
+                </div>
 
-  <section id="contacto" class="contact-section">
-    <div class="container">
-      <h2>📍 Contacto</h2>
-      <p>📍 Dirección: Calle de las Alitas #123</p>
-      <p>📞 Teléfono: 55 1234 5678</p>
-      <p>📱 WhatsApp: 55 8765 4321</p>
-    </div>
-  </section>
+                <div class="card">
+                    <img src="images/platanos.jpg" alt="Plátanos Fritos">
+                    <div class="card-body">
+                        <h3>Plátanos Fritos</h3>
+                        <p>Dulces plátanos machos fritos a la perfección, con un toque de leche condensada.</p>
+                        <span class="price">$50</span>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito('Plátanos Fritos', 50)">Agregar</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/papas_adobadas.jpg" alt="Papas Adobadas">
+                    <div class="card-body">
+                        <h3>Papas Adobadas</h3>
+                        <p>Crujientes papas de bolsa con nuestro adobo especial de la casa. ¡Picositas!</p>
+                        <span class="price">$30</span>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito('Papas Adobadas', 30)">Agregar</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/papas_naturales.jpg" alt="Papas Naturales">
+                    <div class="card-body">
+                        <h3>Papas Naturales</h3>
+                        <p>Papas de bolsa al punto de sal. Simples, clásicas y deliciosas.</p>
+                        <span class="price">$30</span>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito('Papas Naturales', 30)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="lealtad" class="loyalty-section">
+      <div class="container">
+        <h2>🎁 GANA CON RUFI PUNTOS</h2>
+        <p>¡Tu lealtad tiene recompensa! Gana puntos con cada compra al registrarte en nuestra página y canjéalos por tus productos favoritos. ¡Es gratis y fácil!</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact-section">
+      <div class="container">
+        <h2>📍 UBICACIÓN Y CONTACTO</h2>
+        <p>Visítanos en: Calle de las Alitas #123</p>
+        <p>Llámanos: 55 1234 5678 | Mándanos un WhatsApp: 55 8765 4321</p>
+      </div>
+    </section>
+  </main>
 
   <div id="carritoSidebar" class="sidebar">
     <h3>Tu Pedido</h3>
     <ul id="carritoLista"></ul>
-    <p>Total: <span id="total">$0</span></p>
-    <button id="pagarBtn" class="btn-primary">Proceder al pago</button>
+    <div>
+        <p>Total: <span id="total">$0</span></p>
+        <button id="pagarBtn" class="btn-primary">Proceder al Pago</button>
+    </div>
   </div>
   <button id="carritoBtn" class="cart-float">🛒</button>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Rufis. Todos los derechos reservados.</p>
+      <p>&copy; 2025 Rufis. Creado con ❤️ para los amantes de las alitas.</p>
     </div>
   </footer>
 </body>
