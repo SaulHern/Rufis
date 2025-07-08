@@ -321,3 +321,49 @@ section h2 {
     margin-top: 5px;
     padding-left: 15px;
 }
+/* ESTILOS PARA PAGINA DE CUENTA */
+.account-details {
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.account-details p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.account-details span {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.order-history-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.order-history-container .order-card {
+  background-color: var(--surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 5px solid var(--primary);
+}
+
+.order-card p {
+  margin: 0 0 0.5rem 0;
+}
+
+.order-card ul {
+  padding-left: 20px;
+  margin-top: 0.5rem;
+}
+
+.order-card .status-pagado { color: #28a745; font-weight: bold; text-transform: capitalize; }
+.order-card .status-pendiente { color: #ffc107; font-weight: bold; text-transform: capitalize; }
+.order-card .status-cancelado { color: #dc3545; font-weight: bold; text-transform: capitalize; }
