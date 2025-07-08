@@ -13,27 +13,56 @@
     <div class="container">
       <a href="index.html" style="text-decoration: none;"><h1 class="logo">Rufis</h1></a>
       <nav>
-        <a href="index.html#menu">Menú</a>
-        <button id="logoutBtn" class="btn-secondary">Cerrar Sesión</button>
+        <a href="index.html">Menú</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="account-section">
-      <div class="container">
-        <h2>Mi Cuenta</h2>
-        <div class="account-details">
-          <p><strong>Correo:</strong> <span id="userEmail">Cargando...</span></p>
-          <p><strong>Mis Rufi Puntos:</strong> <span id="userPoints">Cargando...</span></p>
+    <div class="container account-container">
+      <aside class="account-nav">
+        <div class="user-profile">
+          <strong id="userName">Saul Alberto</strong>
+          <span id="userEmail">albertosaul341@gmail.com</span>
+        </div>
+        <ul>
+          <li><button class="account-tab-button active" data-tab="compras">🛒 Mis Compras</button></li>
+          <li><button class="account-tab-button" data-tab="puntos">⭐ Rufi Puntos</button></li>
+          <li><button class="account-tab-button" data-tab="mi-cuenta">👤 Mi Cuenta</button></li>
+          <li><button id="logoutBtn">🚪 Cerrar Sesión</button></li>
+        </ul>
+      </aside>
+
+      <section class="account-content">
+        <div id="compras" class="account-tab-content active">
+          <h2>Mis Compras</h2>
+          <div id="orderHistory" class="order-history-container">
+            <p>Cargando historial...</p>
+          </div>
         </div>
 
-        <h3 class="order-history-title">Mi Historial de Pedidos</h3>
-        <div id="orderHistory" class="order-history-container">
-          <p>Cargando historial...</p>
+        <div id="puntos" class="account-tab-content">
+          <h2>¡Bienvenido a Rufi Puntos!</h2>
+          <p class="points-description">Acumula puntos por cada compra y recibe el 3% del total de tus productos en puntos. Cada 1 Rufi Punto equivale a $1.00 MXN.</p>
+          <div class="points-summary">
+            <p>Tienes</p>
+            <h3 id="userPointsTotal">--</h3>
+            <p>Rufi Puntos</p>
+          </div>
+          <div id="pointsHistory" class="points-history-table">
+             </div>
         </div>
-      </div>
-    </section>
+
+        <div id="mi-cuenta" class="account-tab-content">
+          <h2>Detalles de Mi Cuenta</h2>
+          <p>Aquí puedes revisar la información de tu cuenta.</p>
+          <div class="account-details-box">
+             <p><strong>Correo Electrónico:</strong> <span id="accountDetailEmail"></span></p>
+             <p><strong>Miembro desde:</strong> <span id="accountDetailDate"></span></p>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="footer">
