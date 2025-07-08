@@ -27,8 +27,8 @@ const pendingOrdersContainer = document.getElementById('pendingOrdersContainer')
 // Lógica principal
 onAuthStateChanged(auth, user => {
     if (user) {
-        // ¡¡REEMPLAZA CON TU UID DE ADMIN!!
-        const adminUid = "TU_UID_DE_ADMIN";
+        // UID de administrador ya integrado
+        const adminUid = "en6kkydgtWXPu4FqoHVUFytx1Lu1";
 
         if (user.uid === adminUid) {
             adminUserEmailSpan.textContent = user.email;
