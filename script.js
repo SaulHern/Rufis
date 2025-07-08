@@ -120,12 +120,13 @@ if (pagarBtn) {
         producto: p.nombre,
         cantidad: p.cantidad,
         precio: p.precio,
-        extras: p.extras || [] // Guardar los extras en la orden
+        extras: p.extras || []
       })),
       total: carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0),
       pagado: "Efectivo",
       creado: fecha.toISOString(),
-      listoAprox: listo.toISOString()
+      listoAprox: listo.toISOString(),
+      estado: "pendiente" // El estado inicial de todas las órdenes
     };
 
     try {
@@ -150,7 +151,7 @@ if (loginForm) {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        window.location.href = "index.html";
+        window.location.href = "cuenta.html"; // Al iniciar sesión, llévalo a su cuenta
       })
       .catch((err) => alert("❌ " + err.message));
   });
@@ -166,7 +167,8 @@ if (registerForm) {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
-        window.location.href = "index.html";
+        alert("✅ Registro exitoso. Ahora inicia sesión.");
+        window.location.href = "login.html"; // Llévalo a iniciar sesión después de registrarse
       })
       .catch((err) => alert("❌ " + err.message));
   });
