@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rufis - Alitas y Más</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff9f5;
+      color: #333;
+    }
+    header {
+      background-color: #ff6b00;
+      color: white;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1em;
+      font-weight: 600;
+    }
+    .hero {
+      background: url('ChatGPT Image 8 jul 2025, 10_45_06 a.m..png') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero h1 {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1em;
+      font-size: 2.5em;
+      border-radius: 10px;
+    }
+    section {
+      padding: 3em 2em;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2em;
+      text-align: center;
+    }
+    .menu-grid div {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1em;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .menu-grid h3 {
+      margin: 0.5em 0;
+    }
+    footer {
+      background: #222;
+      color: white;
+      padding: 2em;
+      text-align: center;
+    }
+    .login, .loyalty {
+      background: #ffe5d0;
+      border-radius: 10px;
+      padding: 2em;
+      margin: 2em 0;
+    }
+    input {
+      padding: 0.5em;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 1em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 0.7em 2em;
+      background-color: #ff6b00;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rufis</h1>
+    <nav>
+      <a href="#menu">Menú</a>
+      <a href="#lealtad">Lealtad</a>
+      <a href="#promos">Promos</a>
+      <a href="#login">Iniciar Sesión</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>¡Las mejores alitas, boneless y papas están en Rufis!</h1>
+  </section>
+
+  <section id="menu">
+    <h2>Menú</h2>
+    <div class="menu-grid">
+      <div><h3>🍗 Alitas</h3><p>Jugosas y picantes</p></div>
+      <div><h3>🧆 Boneless</h3><p>Sin hueso, todo sabor</p></div>
+      <div><h3>🍌 Plátanos Machos</h3><p>Dorados y dulces</p></div>
+      <div><h3>🍟 Papas Francesas</h3><p>Crujientes y doradas</p></div>
+      <div><h3>🥔 Papas Naturales</h3><p>100% papas frescas</p></div>
+      <div><h3>🌶️ Papas Adobadas</h3><p>Con sabor intenso</p></div>
+      <div><h3>🧀 Papas con Queso</h3><p>¡Extra queso por favor!</p></div>
+    </div>
+  </section>
+
+  <section id="lealtad" class="loyalty">
+    <h2>🎁 Programa de Lealtad - Rufis Puntos</h2>
+    <p>Por cada $100 gastados, ganas 1 punto.</p>
+    <p>Canjea puntos por productos gratis y promociones exclusivas.</p>
+    <p>¡Regístrate y empieza a acumular!</p>
+  </section>
+
+  <section id="login" class="login">
+    <h2>🔐 Iniciar Sesión / Registro</h2>
+    <form>
+      <input type="email" placeholder="Correo electrónico" required><br>
+      <input type="password" placeholder="Contraseña" required><br>
+      <input type="tel" placeholder="Número de teléfono" required><br>
+      <button type="submit">Entrar</button>
+    </form>
+    <p>¿Nuevo aquí? <a href="#">Crea una cuenta</a></p>
+  </section>
+
+  <section id="contacto">
+    <h2>📍 Contacto</h2>
+    <p>📍 Ubicación: Calle de las Alitas #123</p>
+    <p>📞 Teléfono: 55 1234 5678</p>
+    <p>📱 WhatsApp: 55 8765 4321</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rufis. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
 
