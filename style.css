@@ -280,3 +280,44 @@ section h2 {
 .cart-float:hover {
     transform: scale(1.1);
 }
+/* ESTILOS PARA SECCIÓN DE EXTRAS */
+.extras-section {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+}
+
+.extras-section h4 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.extras-grid label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.extras-grid input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: var(--primary);
+}
+
+/* Estilo para el carrito con extras */
+#carritoLista .extras-list {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-top: 5px;
+    padding-left: 15px;
+}
