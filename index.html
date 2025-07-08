@@ -17,6 +17,7 @@
         <a href="#menu">Menú</a>
         <a href="#paquetes">Paquetes</a>
         <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
         <a href="login.html" class="btn-secondary">Mi Cuenta</a>
       </nav>
     </div>
@@ -52,7 +53,7 @@
               <span class="price">$100</span>
               <div class="button-group">
                 <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Alitas', 100)">Agregar</button>
-                <button class="btn-redeem" onclick="gastarPuntos('Alitas', 100)">Canjear (100 pts)</button>
+                <button class="btn-redeem" onclick="window.gastarPuntos('Alitas', 100)">Canjear (100 pts)</button>
               </div>
             </div>
           </div>
@@ -72,15 +73,149 @@
               <span class="price">$90</span>
               <div class="button-group">
                 <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Boneless', 90)">Agregar</button>
-                <button class="btn-redeem" onclick="gastarPuntos('Boneless', 90)">Canjear (90 pts)</button>
+                <button class="btn-redeem" onclick="window.gastarPuntos('Boneless', 90)">Canjear (90 pts)</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/papas_queso.jpg" alt="Papas con Queso">
+            <div class="card-body">
+              <h3>Papas con Queso</h3>
+              <p>Papas a la francesa con queso cheddar fundido.</p>
+              <span class="price">$50</span>
+              <div class="button-group">
+                <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Papas con Queso', 50)">Agregar</button>
+                <button class="btn-redeem" onclick="window.gastarPuntos('Papas con Queso', 50)">Canjear (50 pts)</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section id="paquetes" class="menu-section">
+        <div class="container">
+            <h2>Paquetes</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="images/alitas.jpg" alt="Paquete Alitas">
+                    <div class="card-body">
+                        <h3>Paquete Alitas</h3>
+                        <p>10 Alitas + Papas Francesas. ¡Ahorra $20!</p>
+                        <span class="price">$180</span>
+                        <div class="button-group">
+                          <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Paquete Alitas', 180)">Agregar</button>
+                          <button class="btn-redeem" onclick="window.gastarPuntos('Paquete Alitas', 180)">Canjear (180 pts)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/boneless.jpg" alt="Paquete Boneless">
+                    <div class="card-body">
+                        <h3>Paquete Boneless</h3>
+                        <p>200g Boneless + Papas Francesas. ¡Ahorra $20!</p>
+                        <span class="price">$170</span>
+                        <div class="button-group">
+                          <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Paquete Boneless', 170)">Agregar</button>
+                          <button class="btn-redeem" onclick="window.gastarPuntos('Paquete Boneless', 170)">Canjear (170 pts)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="especialidades" class="menu-section">
+        <div class="container">
+            <h2>Nuestras Especialidades</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="images/papas_francesas.jpg" alt="Papas Francesas">
+                    <div class="card-body">
+                        <h3>Papas Francesas</h3>
+                        <p>Las clásicas papas a la francesa, doradas y crujientes.</p>
+                        <span class="price">$100</span>
+                        <div class="button-group">
+                            <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Papas Francesas', 100)">Agregar</button>
+                            <button class="btn-redeem" onclick="window.gastarPuntos('Papas Francesas', 100)">Canjear (100 pts)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/platanos.jpg" alt="Plátanos Fritos">
+                    <div class="card-body">
+                        <h3>Plátanos Fritos</h3>
+                        <p>Dulces plátanos machos fritos con leche condensada.</p>
+                        <span class="price">$50</span>
+                        <div class="button-group">
+                            <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Plátanos Fritos', 50)">Agregar</button>
+                            <button class="btn-redeem" onclick="window.gastarPuntos('Plátanos Fritos', 50)">Canjear (50 pts)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/papas_adobadas.jpg" alt="Papas Adobadas">
+                    <div class="card-body">
+                        <h3>Papas Adobadas</h3>
+                        <p>Crujientes papas de bolsa con nuestro adobo especial.</p>
+                        <span class="price">$30</span>
+                        <div class="button-group">
+                           <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Papas Adobadas', 30)">Agregar</button>
+                           <button class="btn-redeem" onclick="window.gastarPuntos('Papas Adobadas', 30)">Canjear (30 pts)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/papas_naturales.jpg" alt="Papas Naturales">
+                    <div class="card-body">
+                        <h3>Papas Naturales</h3>
+                        <p>Papas de bolsa al punto de sal. Simples y deliciosas.</p>
+                        <span class="price">$30</span>
+                        <div class="button-group">
+                            <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Papas Naturales', 30)">Agregar</button>
+                            <button class="btn-redeem" onclick="window.gastarPuntos('Papas Naturales', 30)">Canjear (30 pts)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    </main>
+    <section id="lealtad" class="loyalty-section">
+      <div class="container">
+        <h2>🎁 GANA CON RUFI PUNTOS</h2>
+        <p>¡Tu lealtad tiene recompensa! Por cada $100 de compra, ganas 3 puntos (equivalentes a $3) para canjear por tus productos favoritos. ¡Regístrate y empieza a ganar!</p>
+      </div>
+    </section>
+
+    <section id="ubicacion" class="location-section">
+      <div class="container">
+        <h2>📍 ¡Visítanos!</h2>
+        <p>Encuéntranos en: Cda. de Allende 5, Valle Dorado, 53690 Naucalpan de Juárez, Méx.</p>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.593638420311!2d-99.2599547!3d19.4735001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2039e1a103623%3A0x853412290251bc6!2sCda.%20de%20Allende%205%2C%20Valle%20Dorado%2C%2053690%20Naucalpan%20de%20Ju%C3%A1rez%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1678886400000!5m2!1ses!2smx" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contacto" class="contact-section">
+        <div class="container">
+          <h2>📞 Contacto</h2>
+          <p>Dirección: Cda. de Allende 5, Valle Dorado, 53690 Naucalpan de Juárez, Méx.</p>
+          <p>Teléfono: 55 1234 5678</p>
+          <p>WhatsApp: 55 8765 4321</p>
+        </div>
+    </section>
+
+  </main>
 
   <div id="carritoSidebar" class="sidebar">
     <h3>Tu Pedido</h3>
