@@ -1,4 +1,4 @@
-// Firebase SDK imports
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getAuth,
@@ -9,11 +9,9 @@ import {
 import {
   getFirestore,
   collection,
-  addDoc,
-  serverTimestamp
+  addDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// Configuración de tu proyecto Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAMzNOzdJdGit8Fqwtt0CfvqUxAKqb7TBM",
   authDomain: "rufis-1ac2c.firebaseapp.com",
@@ -23,63 +21,15 @@ const firebaseConfig = {
   appId: "1:974385520475:web:xxxxxxxxxxxxxxxx"
 };
 
-// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// ====================
-// SESIÓN PERSISTENTE
-// ====================
 let currentUser = null;
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    currentUser = user;
-    console.log("Usuario autenticado:", user.email);
-  } else {
-    currentUser = null;
-  }
+  currentUser = user || null;
 });
 
-// ====================
-// REGISTRO
-// ====================
-const registerForm = document.getElementById('registerForm');
-if (registerForm) {
-  registerForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = registerForm.email.value;
-    const password = registerForm.password.value;
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        alert("✅ Cuenta creada y sesión iniciada");
-        window.location.href = "index.html";
-      })
-      .catch(err => alert("❌ " + err.message));
-  });
-}
-
-// ====================
-// LOGIN
-// ====================
-const loginForm = document.getElementById('loginForm');
-if (loginForm) {
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = loginForm.email.value;
-    const password = loginForm.password.value;
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        alert("✅ Sesión iniciada");
-        window.location.href = "index.html";
-      })
-      .catch(err => alert("❌ " + err.message));
-  });
-}
-
-// ====================
-// CARRITO
-// ====================
 let carrito = [];
 const carritoBtn = document.getElementById("carritoBtn");
 const carritoModal = document.getElementById("carritoModal");
@@ -87,7 +37,6 @@ const carritoLista = document.getElementById("carritoLista");
 const totalSpan = document.getElementById("total");
 const pagarBtn = document.getElementById("pagarBtn");
 
-// Mostrar/Ocultar carrito
 if (carritoBtn) {
   carritoBtn.addEventListener('click', () => {
     carritoModal.classList.toggle("visible");
@@ -95,7 +44,6 @@ if (carritoBtn) {
   });
 }
 
-// Agregar producto desde botón
 window.agregarAlCarrito = function (nombre, precio) {
   const existente = carrito.find(p => p.nombre === nombre);
   if (existente) {
@@ -107,7 +55,6 @@ window.agregarAlCarrito = function (nombre, precio) {
   carritoModal.classList.add("visible");
 };
 
-// Renderizar carrito
 function renderCarrito() {
   carritoLista.innerHTML = '';
   let total = 0;
@@ -122,7 +69,6 @@ function renderCarrito() {
   totalSpan.textContent = `$${total}`;
 }
 
-// Proceder al pago
 if (pagarBtn) {
   pagarBtn.addEventListener('click', async () => {
     if (!currentUser) {
