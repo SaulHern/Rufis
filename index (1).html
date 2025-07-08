@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rufis - Alitas y Más</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Rufis</h1>
+      <nav>
+        <a href="#menu">Menú</a>
+        <a href="#lealtad">Rufi Puntos</a>
+        <a href="#contacto">Contacto</a>
+        <a href="login.html" class="btn-secondary">Iniciar Sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>¡Las mejores alitas, boneless y papas están en Rufis!</h2>
+      <p>Deliciosas combinaciones, rufi puntos por cada compra, y servicio rápido y sabroso.</p>
+      <a href="#menu" class="btn-primary">Ver Menú</a>
+    </div>
+  </section>
+
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <h2>Menú</h2>
+      <div class="card-grid">
+        <div class="card">
+          <img src="images/alitas.jpg" alt="Alitas">
+          <div class="card-body">
+            <h3>Alitas</h3>
+            <p>Jugosas, picantes y crujientes.</p>
+            <span>$100</span>
+            <button onclick="agregarAlCarrito('Alitas', 100)">Agregar</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/boneless.jpg" alt="Boneless">
+          <div class="card-body">
+            <h3>Boneless</h3>
+            <p>Sin hueso, todo sabor.</p>
+            <span>$90</span>
+            <button onclick="agregarAlCarrito('Boneless', 90)">Agregar</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/papas_queso.jpg" alt="Papas con Queso">
+          <div class="card-body">
+            <h3>Papas con Queso</h3>
+            <p>Con queso derretido encima.</p>
+            <span>$50</span>
+            <button onclick="agregarAlCarrito('Papas con Queso', 50)">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lealtad" class="loyalty-section">
+    <div class="container">
+      <h2>🎁 Rufi Puntos</h2>
+      <p>Gana puntos por cada $100 de consumo y cámbialos por productos gratis. ¡Solo necesitas registrarte!</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <h2>📍 Contacto</h2>
+      <p>📍 Dirección: Calle de las Alitas #123</p>
+      <p>📞 Teléfono: 55 1234 5678</p>
+      <p>📱 WhatsApp: 55 8765 4321</p>
+    </div>
+  </section>
+
+  <div id="carritoSidebar" class="sidebar">
+    <h3>Tu Pedido</h3>
+    <ul id="carritoLista"></ul>
+    <p>Total: <span id="total">$0</span></p>
+    <button id="pagarBtn" class="btn-primary">Proceder al pago</button>
+  </div>
+  <button id="carritoBtn" class="cart-float">🛒</button>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Rufis. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
