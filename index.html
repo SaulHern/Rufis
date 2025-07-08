@@ -1,69 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rufis - Alitas y Más</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rufis</title>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Rufis</h1>
-    <nav>
-      <a href="#menu">Menú</a>
-      <a href="#lealtad">Rufi Puntos</a>
-      <a href="#promos">Promos</a>
-      <a href="#login">Iniciar Sesión</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>¡Las mejores alitas, boneless y papas están en Rufis!</h1>
-  </section>
+  <header><h1>Rufis</h1></header>
 
   <section id="menu">
     <h2>Menú</h2>
-    <div class="menu-grid">
-      <div><img src="images/alitas.jpg" alt="Alitas"><h3>🍗 Alitas</h3><p>Jugosas y picantes</p></div>
-      <div><img src="images/boneless.jpg" alt="Boneless"><h3>🧆 Boneless</h3><p>Sin hueso, todo sabor</p></div>
-      <div><img src="images/platanos.jpg" alt="Plátanos machos"><h3>🍌 Plátanos Machos</h3><p>Dorados y dulces</p></div>
-      <div><img src="images/papas_francesas.jpg" alt="Papas a la francesa"><h3>🍟 Papas Francesas</h3><p>Crujientes y doradas</p></div>
-      <div><img src="images/papas_naturales.jpg" alt="Papas naturales"><h3>🥔 Papas Naturales</h3><p>100% papas frescas</p></div>
-      <div><img src="images/papas_adobadas.jpg" alt="Papas adobadas"><h3>🌶️ Papas Adobadas</h3><p>Con sabor intenso</p></div>
-      <div><img src="images/papas_queso.jpg" alt="Papas con queso"><h3>🧀 Papas con Queso</h3><p>¡Extra queso por favor!</p></div>
+    <div>
+      <p>Alitas - $100</p>
+      <button onclick="agregarAlCarrito('Alitas', 100)">Agregar al carrito</button>
+    </div>
+    <div>
+      <p>Papas con Queso - $50</p>
+      <button onclick="agregarAlCarrito('Papas con Queso', 50)">Agregar al carrito</button>
     </div>
   </section>
 
-  <section id="lealtad" class="loyalty">
-    <h2>🎁 Programa de Lealtad - Rufi Puntos</h2>
-    <p>Por cada $100 gastados, ganas 1 punto.</p>
-    <p>Canjea puntos por productos gratis y promociones exclusivas.</p>
-    <p>¡Regístrate y empieza a acumular!</p>
-  </section>
+  <!-- Botón flotante -->
+  <button id="carritoBtn" style="position:fixed;bottom:20px;right:20px;font-size:24px;">🛒</button>
 
-  <section id="login" class="login">
-    <h2>🔐 Iniciar Sesión / Registro</h2>
-    <form id="authForm">
-      <input type="email" id="email" placeholder="Correo electrónico" required><br>
-      <input type="password" id="password" placeholder="Contraseña" required><br>
-      <input type="tel" id="phone" placeholder="Número de teléfono" required><br>
-      <button type="submit">Registrarse / Iniciar sesión</button>
-    </form>
-    <p>¿Nuevo aquí? <a href="#">Crea una cuenta</a></p>
-  </section>
-
-  <section id="contacto">
-    <h2>📍 Contacto</h2>
-    <p>📍 Ubicación: Calle de las Alitas #123</p>
-    <p>📞 Teléfono: 55 1234 5678</p>
-    <p>📱 WhatsApp: 55 8765 4321</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Rufis. Todos los derechos reservados.</p>
-  </footer>
+  <!-- Modal del carrito -->
+  <div id="carritoModal" class="carrito-modal">
+    <h3>Tu Pedido</h3>
+    <ul id="carritoLista"></ul>
+    <p>Total: <span id="total">$0</span></p>
+    <button id="pagarBtn">Proceder al pago (Efectivo)</button>
+  </div>
 </body>
 </html>
