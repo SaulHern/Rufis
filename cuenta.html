@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Cuenta - Rufis</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" src="cuenta.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" style="text-decoration: none;"><h1 class="logo">Rufis</h1></a>
+      <nav>
+        <a href="index.html#menu">Menú</a>
+        <button id="logoutBtn" class="btn-secondary">Cerrar Sesión</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="account-section">
+      <div class="container">
+        <h2>Mi Cuenta</h2>
+        <div class="account-details">
+          <p><strong>Correo:</strong> <span id="userEmail">Cargando...</span></p>
+          <p><strong>Mis Rufi Puntos:</strong> <span id="userPoints">Cargando...</span></p>
+        </div>
+
+        <h3 class="order-history-title">Mi Historial de Pedidos</h3>
+        <div id="orderHistory" class="order-history-container">
+          <p>Cargando historial...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Rufis. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
