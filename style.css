@@ -422,3 +422,223 @@ section h2 {
   font-weight: bold; 
   text-transform: capitalize; 
 }
+/* =================================== */
+/* ==== ESTILOS PÁGINA "MI CUENTA" ==== */
+/* =================================== */
+
+.account-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    padding-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .account-container {
+        flex-direction: row;
+    }
+}
+
+/* NAVEGACIÓN LATERAL */
+.account-nav {
+    background-color: var(--surface);
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 100%;
+    border: 1px solid #333;
+}
+
+@media (min-width: 768px) {
+    .account-nav {
+        width: 280px;
+        flex-shrink: 0;
+    }
+}
+
+.account-nav .user-profile {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #444;
+}
+
+.user-profile strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+.user-profile span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.account-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.account-nav ul li button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.account-nav ul li button:hover {
+    color: var(--text);
+}
+
+.account-nav ul li button.active {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+/* CONTENIDO DE PESTAÑAS */
+.account-content {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.account-tab-content {
+    display: none;
+}
+
+.account-tab-content.active {
+    display: block;
+}
+
+.account-content h2 {
+    text-align: left;
+    color: var(--text);
+    margin-bottom: 2rem;
+}
+
+/* PESTAÑA MIS COMPRAS */
+.purchase-card {
+    background-color: var(--surface);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.purchase-header {
+    background-color: #2a2a2a;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purchase-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.purchase-header strong {
+    font-size: 1.1rem;
+}
+
+.purchase-header .status-entregado, .status-pagado {
+    color: #28a745;
+}
+
+.purchase-body {
+    padding: 1.5rem;
+}
+
+.purchase-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #333;
+}
+.purchase-item:last-child {
+    border-bottom: none;
+}
+.purchase-item p {
+    margin: 0;
+}
+
+/* PESTAÑA RUFI PUNTOS */
+.points-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.points-summary {
+    background-color: var(--surface);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.points-summary p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.points-summary h3 {
+    font-size: 3rem;
+    color: var(--primary);
+    margin: 0.5rem 0;
+}
+
+.points-history-table .points-table-header,
+.points-history-table .points-table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    text-align: right;
+}
+
+.points-history-table .points-table-header {
+    font-weight: bold;
+    color: var(--text-secondary);
+    border-bottom: 2px solid #444;
+}
+
+.points-history-table .points-table-header span:first-child,
+.points-history-table .points-table-row span:first-child {
+    text-align: left;
+}
+
+.points-table-row {
+    background-color: var(--surface);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.points-table-row .points-credit {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* PESTAÑA MI CUENTA */
+.account-details-box {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+.account-details-box p {
+    font-size: 1.1rem;
+}
