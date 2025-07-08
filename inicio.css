@@ -1,0 +1,77 @@
+:root {
+  --primary: #f5b700;
+  --background: #121212;
+  --text: #ffffff;
+  --font: 'Inter', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: var(--font);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero_bg.jpg') no-repeat center center/cover;
+    text-align: center;
+}
+
+.landing-header {
+    padding: 2rem;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.landing-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    color: #ddd;
+}
+
+.btn-pedir {
+    background: var(--primary);
+    color: var(--background);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-pedir:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--primary);
+}
+
+.landing-footer {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
