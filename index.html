@@ -14,6 +14,7 @@
       <h1 class="logo">Rufis</h1>
       <nav>
         <a href="#menu">Menú</a>
+        <a href="#paquetes">Paquetes</a>
         <a href="#lealtad">Rufi Puntos</a>
         <a href="#contacto">Contacto</a>
         <a href="login.html" class="btn-secondary">Mi Cuenta</a>
@@ -38,31 +39,77 @@
             <img src="images/alitas.jpg" alt="Alitas">
             <div class="card-body">
               <h3>Alitas</h3>
-              <p>10 jugosas alitas bañadas en tu salsa favorita (BBQ, Buffalo o Mango Habanero).</p>
+              <p>10 jugosas alitas bañadas en tu salsa favorita.</p>
+              <div class="extras-section">
+                <h4>Salsas y Extras</h4>
+                <div class="extras-grid">
+                  <label><input type="checkbox" value="BBQ"> BBQ</label>
+                  <label><input type="checkbox" value="Buffalo"> Buffalo</label>
+                  <label><input type="checkbox" value="Mango Habanero"> Mango Habanero</label>
+                  <label><input type="checkbox" value="Ranch"> Ranch</label>
+                  <label><input type="checkbox" value="Limón"> Limón</label>
+                  <label><input type="checkbox" value="Tajín"> Tajín</label>
+                </div>
+              </div>
               <span class="price">$100</span>
-              <button class="btn-add-cart" onclick="agregarAlCarrito('Alitas', 100)">Agregar</button>
+              <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Alitas', 100)">Agregar</button>
             </div>
           </div>
           <div class="card">
             <img src="images/boneless.jpg" alt="Boneless">
             <div class="card-body">
               <h3>Boneless</h3>
-              <p>200g de trozos de pechuga de pollo empanizados y bañados en salsa.</p>
+              <p>200g de trozos de pechuga de pollo empanizados.</p>
+               <div class="extras-section">
+                <h4>Salsas y Extras</h4>
+                <div class="extras-grid">
+                  <label><input type="checkbox" value="BBQ"> BBQ</label>
+                  <label><input type="checkbox" value="Buffalo"> Buffalo</label>
+                  <label><input type="checkbox" value="Mango Habanero"> Mango Habanero</label>
+                  <label><input type="checkbox" value="Ranch"> Ranch</label>
+                </div>
+              </div>
               <span class="price">$90</span>
-              <button class="btn-add-cart" onclick="agregarAlCarrito('Boneless', 90)">Agregar</button>
+              <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Boneless', 90)">Agregar</button>
             </div>
           </div>
           <div class="card">
             <img src="images/papas_queso.jpg" alt="Papas con Queso">
             <div class="card-body">
               <h3>Papas con Queso</h3>
-              <p>Papas a la francesa con un delicioso y cremoso queso cheddar fundido.</p>
+              <p>Papas a la francesa con queso cheddar fundido.</p>
               <span class="price">$50</span>
-              <button class="btn-add-cart" onclick="agregarAlCarrito('Papas con Queso', 50)">Agregar</button>
+              <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Papas con Queso', 50)">Agregar</button>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="paquetes" class="menu-section">
+        <div class="container">
+            <h2>Paquetes</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="images/alitas.jpg" alt="Paquete Alitas">
+                    <div class="card-body">
+                        <h3>Paquete Alitas</h3>
+                        <p>10 Alitas + Papas Francesas. ¡Ahorra $20!</p>
+                        <span class="price">$180</span>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Paquete Alitas', 180)">Agregar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/boneless.jpg" alt="Paquete Boneless">
+                    <div class="card-body">
+                        <h3>Paquete Boneless</h3>
+                        <p>200g Boneless + Papas Francesas. ¡Ahorra $20!</p>
+                        <span class="price">$170</span>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Paquete Boneless', 170)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="especialidades" class="menu-section">
@@ -73,39 +120,44 @@
                     <img src="images/papas_francesas.jpg" alt="Papas Francesas">
                     <div class="card-body">
                         <h3>Papas Francesas</h3>
-                        <p>Las clásicas papas a la francesa, doradas y crujientes. El acompañante perfecto.</p>
+                        <p>Las clásicas papas a la francesa, doradas y crujientes.</p>
+                        <div class="extras-section">
+                            <h4>Agrégale sabor</h4>
+                            <div class="extras-grid">
+                              <label><input type="checkbox" value="Sal"> Sal</label>
+                              <label><input type="checkbox" value="Tajín"> Tajín</label>
+                              <label><input type="checkbox" value="Salsa Maggie"> Salsa Maggie</label>
+                            </div>
+                        </div>
                         <span class="price">$100</span>
-                        <button class="btn-add-cart" onclick="agregarAlCarrito('Papas Francesas', 100)">Agregar</button>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Papas Francesas', 100)">Agregar</button>
                     </div>
                 </div>
-
                 <div class="card">
                     <img src="images/platanos.jpg" alt="Plátanos Fritos">
                     <div class="card-body">
                         <h3>Plátanos Fritos</h3>
-                        <p>Dulces plátanos machos fritos a la perfección, con un toque de leche condensada.</p>
+                        <p>Dulces plátanos machos fritos con leche condensada.</p>
                         <span class="price">$50</span>
-                        <button class="btn-add-cart" onclick="agregarAlCarrito('Plátanos Fritos', 50)">Agregar</button>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Plátanos Fritos', 50)">Agregar</button>
                     </div>
                 </div>
-
                 <div class="card">
                     <img src="images/papas_adobadas.jpg" alt="Papas Adobadas">
                     <div class="card-body">
                         <h3>Papas Adobadas</h3>
-                        <p>Crujientes papas de bolsa con nuestro adobo especial de la casa. ¡Picositas!</p>
+                        <p>Crujientes papas de bolsa con nuestro adobo especial.</p>
                         <span class="price">$30</span>
-                        <button class="btn-add-cart" onclick="agregarAlCarrito('Papas Adobadas', 30)">Agregar</button>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Papas Adobadas', 30)">Agregar</button>
                     </div>
                 </div>
-
                 <div class="card">
                     <img src="images/papas_naturales.jpg" alt="Papas Naturales">
                     <div class="card-body">
                         <h3>Papas Naturales</h3>
-                        <p>Papas de bolsa al punto de sal. Simples, clásicas y deliciosas.</p>
+                        <p>Papas de bolsa al punto de sal. Simples y deliciosas.</p>
                         <span class="price">$30</span>
-                        <button class="btn-add-cart" onclick="agregarAlCarrito('Papas Naturales', 30)">Agregar</button>
+                        <button class="btn-add-cart" onclick="agregarAlCarrito(this, 'Papas Naturales', 30)">Agregar</button>
                     </div>
                 </div>
             </div>
