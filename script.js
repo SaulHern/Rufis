@@ -109,3 +109,37 @@ if (pagarBtn) {
     }
   });
 }
+// =============== LOGIN FORM ===============
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        alert("✅ Sesión iniciada");
+        window.location.href = "index.html";
+      })
+      .catch((err) => alert("❌ " + err.message));
+  });
+}
+
+// =============== REGISTER FORM ===============
+const registerForm = document.getElementById('registerForm');
+if (registerForm) {
+  registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        alert("✅ Registro exitoso");
+        window.location.href = "index.html";
+      })
+      .catch((err) => alert("❌ " + err.message));
+  });
+}
+
