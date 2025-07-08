@@ -5,7 +5,6 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
 import {
   getFirestore,
   collection,
@@ -43,30 +42,59 @@ const pagarBtn = document.getElementById("pagarBtn");
 if (carritoBtn) {
   carritoBtn.addEventListener('click', () => {
     carritoSidebar.classList.toggle("visible");
-    renderCarrito();
   });
 }
 
-window.agregarAlCarrito = function (nombre, precio) {
-  const existente = carrito.find(p => p.nombre === nombre);
+// FUNCIÓN GLOBAL PARA AGREGAR AL CARRITO
+window.agregarAlCarrito = function (button, nombre, precio) {
+  const cardBody = button.closest('.card-body');
+  const extrasCheckboxes = cardBody.querySelectorAll('.extras-grid input[type="checkbox"]:checked');
+  
+  const extras = Array.from(extrasCheckboxes).map(cb => cb.value);
+  const extrasId = extras.sort().join(','); // ID único para la combinación de extras
+
+  // ID único para el producto con sus extras
+  const productoId = `${nombre}-${extrasId}`;
+
+  const existente = carrito.find(p => p.id === productoId);
+  
   if (existente) {
     existente.cantidad++;
   } else {
-    carrito.push({ nombre, precio, cantidad: 1 });
+    carrito.push({
+      id: productoId,
+      nombre,
+      precio,
+      cantidad: 1,
+      extras
+    });
   }
+
+  // Desmarcar checkboxes después de agregar
+  cardBody.querySelectorAll('.extras-grid input[type="checkbox"]').forEach(cb => cb.checked = false);
+  
   renderCarrito();
   carritoSidebar.classList.add("visible");
 };
 
 function renderCarrito() {
+  if (!carritoLista) return;
   carritoLista.innerHTML = '';
   let total = 0;
+
   carrito.forEach(item => {
     const li = document.createElement('li');
-    li.textContent = `${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad}`;
+    let itemHTML = `${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad}`;
+    
+    if (item.extras && item.extras.length > 0) {
+      itemHTML += `<div class="extras-list">+ ${item.extras.join(', ')}</div>`;
+    }
+    
+    li.innerHTML = itemHTML;
     carritoLista.appendChild(li);
     total += item.precio * item.cantidad;
   });
+
   totalSpan.textContent = `$${total}`;
 }
 
@@ -74,6 +102,7 @@ if (pagarBtn) {
   pagarBtn.addEventListener("click", async () => {
     if (!currentUser) {
       alert("🔒 Inicia sesión para hacer tu pedido");
+      window.location.href = "login.html";
       return;
     }
 
@@ -90,7 +119,8 @@ if (pagarBtn) {
       items: carrito.map(p => ({
         producto: p.nombre,
         cantidad: p.cantidad,
-        precio: p.precio
+        precio: p.precio,
+        extras: p.extras || [] // Guardar los extras en la orden
       })),
       total: carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0),
       pagado: "Efectivo",
@@ -109,6 +139,7 @@ if (pagarBtn) {
     }
   });
 }
+
 // =============== LOGIN FORM ===============
 const loginForm = document.getElementById('loginForm');
 if (loginForm) {
@@ -119,7 +150,6 @@ if (loginForm) {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        alert("✅ Sesión iniciada");
         window.location.href = "index.html";
       })
       .catch((err) => alert("❌ " + err.message));
@@ -136,10 +166,8 @@ if (registerForm) {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
-        alert("✅ Registro exitoso");
         window.location.href = "index.html";
       })
       .catch((err) => alert("❌ " + err.message));
   });
 }
-
